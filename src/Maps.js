@@ -24,14 +24,16 @@ export class MapContainer extends Component {
         height: '100%'
       }}
       initialCenter= {{lat: 31.2166025, lng: 29.9233916}}
-      zoom={14}
+      zoom={12}
       onClick={this.props.onMapClicked}
       >
       {this.props.places.map((marker) => (
             <Marker
               key={marker.name}
               name={marker.name}
-              position={marker.position}
+              address={marker.location.address}
+              category={marker.categories[0].name}
+              position={{lat:marker.location.labeledLatLngs[0].lat, lng: marker.location.labeledLatLngs[0].lng}}
               onClick={this.props.onMarkerClick}
               icon={this.props.selectedPlace.name==marker.name ? this.makeMarkerIcon('0091ff') : this.makeMarkerIcon('FFFF24')}
               />
@@ -42,8 +44,10 @@ export class MapContainer extends Component {
         visible={this.props.showingInfoWindow}
         onOpen={this.windowHasOpened}
         onClose={this.windowHasClosed}>
-          <div>
-            <h1>{this.props.selectedPlace.name}</h1>
+          <div className='infowindow' tabIndex='0'>
+            <h3>name: {this.props.selectedPlace.name}</h3>
+            <p>address: {this.props.selectedPlace.address ? this.props.selectedPlace.address:'not found'}</p>
+            <p>category: {this.props.selectedPlace.category}</p>
           </div>
       </InfoWindow>      
       </Map>

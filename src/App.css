@@ -129,7 +129,7 @@ input.form-control {
 .map{
   height: 450px;
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .sidebar {
     display: block;
     position: fixed;
@@ -145,12 +145,12 @@ input.form-control {
 
   .navbar-header {
     width: 100%; } }
-.sidebar ul.nav a:hover, .sidebar ul.nav li.parent ul li a:hover {
+.sidebar ul.nav li:hover, .sidebar ul.nav li.parent ul li:hover {
   text-decoration: none;
   background-color: #30a5ff;
   color: #fff; }
 
-.sidebar ul.nav .active a, .sidebar ul.nav li.parent a.active, .sidebar ul.nav .active > a:hover, .sidebar ul.nav li.parent a.active:hover, .sidebar ul.nav .active > a:focus, .sidebar ul.nav li.parent a.active:focus {
+.sidebar ul.nav li.active, .sidebar ul.nav li.parent a.active, .sidebar ul.nav .active > li:hover, .sidebar ul.nav li.parent li.active:hover, .sidebar ul.nav li.active:focus, .sidebar ul.nav li.parent li.active:focus {
   color: #fff;
   background-color: #30a5ff; }
 
@@ -158,10 +158,11 @@ input.form-control {
   list-style: none;
   list-style-type: none; }
 
-.sidebar ul.nav li a {
-  height: 50px;
+.sidebar ul.nav li {
+  height: 60px;
+  padding: 5px;
   font-size: 15px;
-  line-height: 2em;
+  line-height: 1.5em;
   color: #444444; }
 
 .sidebar ul.nav ul.children {
