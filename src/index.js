@@ -8,6 +8,5 @@ import $ from 'jquery';
 window.jQuery = window.$ = $;
 require('bootstrap');
 
-
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

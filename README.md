@@ -7,8 +7,6 @@ this project displays the most popular places in alexandria showing there addres
 ## how it work
 
 * install dependencies `npm install`
-* move bootstrap file to `node_modules`
-* install jqueru `npm i jquery`
 * run development server `npm start`
 
 ## Api used
